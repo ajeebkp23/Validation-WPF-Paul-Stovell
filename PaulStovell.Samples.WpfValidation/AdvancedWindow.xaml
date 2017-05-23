@@ -1,0 +1,27 @@
+﻿<Window x:Class="PaulStovell.Samples.WpfValidation.AdvancedWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:PaulStovell.Samples.WpfValidation" 
+	Title="Simple Validation" Height="300" Width="300" WindowState="Maximized"
+    >
+
+	<!-- 
+	See App.xml for the ErrorTemplate style applied to these TextBoxes. 
+	-->
+
+	<Border Padding="50">
+		<StackPanel>
+			<TextBlock>
+				To see validation using ValidationRules, change the App.xaml's StartupUri to SimpleWindow.xaml.
+			</TextBlock>
+
+			<local:ErrorProvider>
+				<StackPanel>
+					<TextBox Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" Width="200" Margin="5" />
+					<TextBox Text="{Binding Path=Address, UpdateSourceTrigger=PropertyChanged}" Width="200" Margin="5" />
+				</StackPanel>
+			</local:ErrorProvider>
+			
+		</StackPanel>
+	</Border>
+</Window>
